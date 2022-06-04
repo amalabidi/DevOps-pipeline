@@ -7,25 +7,7 @@ chai.use(chaiHttp);
 const { User } = require("../models/User");
 
 describe("/POST user", () => {
-    it("it should not create a user without email address", (done) => {
-        let user = new User({
-            username: "Amal",
-            password: "hahahha",
-            address: "jjj",
-        });
-        chai
-            .request(server)
-            .post("/user/signup")
-            .type("json")
-            .send(user)
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a("object");
-                res.body.should.have.property("errors");
-                res.body.errors.email.should.be.eql("required");
-                done();
-            });
-    });
+   
  it("it should create a user ", (done) => {
         let user = new User({
             email: "amalab@gmail.com",
@@ -52,7 +34,7 @@ describe("/POST user", () => {
                 done();
             });
     });
-    it("it should not create a user with an  email already existing", (done) => {
+   /* it("it should not create a user with an  email already existing", (done) => {
         let user = new User({
             password: "hahahha",
             email: "amalab@gmail.com",
