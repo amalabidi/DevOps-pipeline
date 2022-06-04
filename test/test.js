@@ -37,7 +37,7 @@ describe("/POST user", () => {
     it("it should not create a user with an  email already existing", (done) => {
         let user = new User({
             password: "hahahha",
-            email: "amalabidi@gmail.com",
+            email: "amalabidii@gmail.com",
             address: "jjj",
             username: "hehe",
         });
@@ -56,7 +56,7 @@ describe("/POST user", () => {
     });
     it("it should not create a user with a username already existing", (done) => {
         let user = new User({
-            username: "amalabidi",
+            username: "amalabidii",
             password: "hahahha",
             email: "amalmll@gmail.com",
             address: "jjj",
@@ -77,9 +77,9 @@ describe("/POST user", () => {
 
     it("it should not create a user with a username and an email already existing", (done) => {
         let user = new User({
-            username: "amalabidi",
+            username: "amalabidii",
             password: "hahahha",
-            email: "amalabidi@gmail.com",
+            email: "amalabidii@gmail.com",
             address: "jjj",
         });
         chai
@@ -119,10 +119,10 @@ describe("/PUT user", () => {
             .type("json")
             .send({
                 email: "doe@email.com",
-                username: "amalabidi",
+                username: "amalabidii",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bdca631d79d0663ed8034",
+                _id: "629bdf08139fb365676042ca",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -137,11 +137,11 @@ describe("/PUT user", () => {
             .put("/user/update")
             .type("json")
             .send({
-                email: "amalabidi@gmail.com",
+                email: "amalabidii@gmail.com",
                 username: "doe hello",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bdca631d79d0663ed8034",
+                _id: "629bdf08139fb365676042ca",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -160,7 +160,7 @@ describe("/PUT user", () => {
                 username: "dooople hello",
                 address: "pass",
                 password: "haahha",
-                _id: "629bdca631d79d0663ed8034",
+                _id: "629bdf08139fb365676042ca",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -179,7 +179,7 @@ describe("/PUT user", () => {
                 username: "usoser",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bdca631d79d0663ed8034",
+                _id: "629bdf08139fb365676042ca",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -192,7 +192,7 @@ describe("/PUT user", () => {
 });
 describe("/DELETE/:id user", () => {
     it("it should delete a user given an id", (done) => {
-        id = "629bdca631d79d0663ed8034";
+        id = "629bdf08139fb365676042ca";
 
         chai
             .request(server)
