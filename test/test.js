@@ -7,8 +7,8 @@ chai.use(chaiHttp);
 const { User } = require("../models/User");
 
 describe("/POST user", () => {
-   
- it("it should create a user ", (done) => {
+
+    it("it should create a user ", (done) => {
         let user = new User({
             email: "amalab@gmail.com",
             username: "amalab",
@@ -34,11 +34,11 @@ describe("/POST user", () => {
                 done();
             });
     });
-  
+
     it("it should not create a user with an  email already existing", (done) => {
         let user = new User({
             password: "hahahha",
-            email: "amalab@gmail.com",
+            email: "amalabidi@gmail.com",
             address: "jjj",
             username: "hehe",
         });
@@ -57,7 +57,7 @@ describe("/POST user", () => {
     });
     it("it should not create a user with a username already existing", (done) => {
         let user = new User({
-            username: "amalab",
+            username: "amalabidi",
             password: "hahahha",
             email: "amalmll@gmail.com",
             address: "jjj",
@@ -78,9 +78,9 @@ describe("/POST user", () => {
 
     it("it should not create a user with a username and an email already existing", (done) => {
         let user = new User({
-            username: "amalab",
+            username: "amalabidi",
             password: "hahahha",
-            email: "amalab@gmail.com",
+            email: "amalabidi@gmail.com",
             address: "jjj",
         });
         chai
@@ -96,7 +96,7 @@ describe("/POST user", () => {
                 done();
             });
     });
-   
+
 });
 // get users
 describe("/GET user", () => {
@@ -192,9 +192,9 @@ describe("/PUT user", () => {
                 done();
             });
     });
-    
+
 });
-    describe("/DELETE/:id user", () => {
+describe("/DELETE/:id user", () => {
     it("it should delete a user given an id", (done) => {
         id = "629bc06c79ee1f068b6ab84f";
 
