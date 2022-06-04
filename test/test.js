@@ -34,6 +34,7 @@ describe("/POST user", () => {
                 done();
             });
     });
+   });
    /* it("it should not create a user with an  email already existing", (done) => {
         let user = new User({
             password: "hahahha",
