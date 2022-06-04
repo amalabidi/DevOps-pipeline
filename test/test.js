@@ -7,25 +7,7 @@ chai.use(chaiHttp);
 const { User } = require("../models/User");
 
 describe("/POST user", () => {
-    it("it should not create a user without email address", (done) => {
-        let user = new User({
-            username: "Amal",
-            password: "hahahha",
-            address: "jjj",
-        });
-        chai
-            .request(server)
-            .post("/user/signup")
-            .type("json")
-            .send(user)
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a("object");
-                res.body.should.have.property("errors");
-                res.body.errors.email.should.be.eql("required");
-                done();
-            });
-    });
+   
  it("it should create a user ", (done) => {
         let user = new User({
             email: "amalab@gmail.com",
@@ -52,6 +34,7 @@ describe("/POST user", () => {
                 done();
             });
     });
+  
     it("it should not create a user with an  email already existing", (done) => {
         let user = new User({
             password: "hahahha",
@@ -129,24 +112,9 @@ describe("/GET user", () => {
             });
     });
 });
-describe("/DELETE/:id user", () => {
-    it("it should delete a user given an id", (done) => {
-        id = "6298eb931f7c6d1ba8214fe7";
 
-        chai
-            .request(server)
-            .delete("/user/" + id)
-            .type("json")
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a("object");
-                res.body.should.have.property("message").eql("User deleted");
-                done();
-            });
-    });
-});
 
-/*describe("/PUT user", () => {
+describe("/PUT user", () => {
     it("it should throw an error when the username exists", (done) => {
         chai
             .request(server)
@@ -154,10 +122,10 @@ describe("/DELETE/:id user", () => {
             .type("json")
             .send({
                 email: "doe@email.com",
-                username: "amalab",
+                username: "amalabidi",
                 address: "pass",
                 password: "hahahha",
-                _id: "6298f1f080e4903dc898ca92",
+                _id: "629bc06c79ee1f068b6ab84f",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -172,11 +140,11 @@ describe("/DELETE/:id user", () => {
             .put("/user/update")
             .type("json")
             .send({
-                email: "amalab@gmail.com",
+                email: "amalabidi@gmail.com",
                 username: "doe hello",
                 address: "pass",
                 password: "hahahha",
-                _id: "6298f1f080e4903dc898ca92",
+                _id: "629bc06c79ee1f068b6ab84f",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -195,7 +163,7 @@ describe("/DELETE/:id user", () => {
                 username: "dooople hello",
                 address: "pass",
                 password: "haahha",
-                _id: "6298f1f080e4903dc898ca92",
+                _id: "629bc06c79ee1f068b6ab84f",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -214,7 +182,7 @@ describe("/DELETE/:id user", () => {
                 username: "usoser",
                 address: "pass",
                 password: "hahahha",
-                _id: "6298f1f080e4903dc898ca92",
+                _id: "629bc06c79ee1f068b6ab84f",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -224,4 +192,21 @@ describe("/DELETE/:id user", () => {
                 done();
             });
     });
-});*/
+    
+});
+    describe("/DELETE/:id user", () => {
+    it("it should delete a user given an id", (done) => {
+        id = "629bc06c79ee1f068b6ab84f";
+
+        chai
+            .request(server)
+            .delete("/user/" + id)
+            .type("json")
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.a("object");
+                res.body.should.have.property("message").eql("User deleted");
+                done();
+            });
+    });
+});
