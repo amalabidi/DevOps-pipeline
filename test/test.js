@@ -10,8 +10,8 @@ describe("/POST user", () => {
 
     it("it should create a user ", (done) => {
         let user = new User({
-            email: "amalab@gmail.com",
-            username: "amalab",
+            email: "amalabidi@gmail.com",
+            username: "amalabidi",
             password: "hahahha",
 
             address: "jjj",
@@ -125,7 +125,7 @@ describe("/PUT user", () => {
                 username: "amalabidi",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdba1b226af0692ce8269",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -144,7 +144,7 @@ describe("/PUT user", () => {
                 username: "doe hello",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdba1b226af0692ce8269",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -163,7 +163,7 @@ describe("/PUT user", () => {
                 username: "dooople hello",
                 address: "pass",
                 password: "haahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdba1b226af0692ce8269",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -182,7 +182,7 @@ describe("/PUT user", () => {
                 username: "usoser",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdba1b226af0692ce8269",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -196,7 +196,7 @@ describe("/PUT user", () => {
 });
 describe("/DELETE/:id user", () => {
     it("it should delete a user given an id", (done) => {
-        id = "629bc06c79ee1f068b6ab84f";
+        id = "629bdba1b226af0692ce8269";
 
         chai
             .request(server)
