@@ -7,11 +7,10 @@ chai.use(chaiHttp);
 const { User } = require("../models/User");
 
 describe("/POST user", () => {
-
     it("it should create a user ", (done) => {
         let user = new User({
-            email: "amalab@gmail.com",
-            username: "amalab",
+            email: "amalabidii@gmail.com",
+            username: "amalabidii",
             password: "hahahha",
 
             address: "jjj",
@@ -96,7 +95,6 @@ describe("/POST user", () => {
                 done();
             });
     });
-
 });
 // get users
 describe("/GET user", () => {
@@ -113,7 +111,6 @@ describe("/GET user", () => {
     });
 });
 
-
 describe("/PUT user", () => {
     it("it should throw an error when the username exists", (done) => {
         chai
@@ -125,7 +122,7 @@ describe("/PUT user", () => {
                 username: "amalabidi",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdca631d79d0663ed8034",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -144,7 +141,7 @@ describe("/PUT user", () => {
                 username: "doe hello",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdca631d79d0663ed8034",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -163,7 +160,7 @@ describe("/PUT user", () => {
                 username: "dooople hello",
                 address: "pass",
                 password: "haahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdca631d79d0663ed8034",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -182,7 +179,7 @@ describe("/PUT user", () => {
                 username: "usoser",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bc06c79ee1f068b6ab84f",
+                _id: "629bdca631d79d0663ed8034",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -192,11 +189,10 @@ describe("/PUT user", () => {
                 done();
             });
     });
-
 });
 describe("/DELETE/:id user", () => {
     it("it should delete a user given an id", (done) => {
-        id = "629bc06c79ee1f068b6ab84f";
+        id = "629bdca631d79d0663ed8034";
 
         chai
             .request(server)
