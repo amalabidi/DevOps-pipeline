@@ -122,7 +122,7 @@ describe("/PUT user", () => {
                 username: "amalabidi",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bea51ba9b084278ee1b07",
+                _id: "629c0a8581282192e21e05a7",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -141,7 +141,7 @@ describe("/PUT user", () => {
                 username: "doe hello",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bea51ba9b084278ee1b07",
+                _id: "629c0a8581282192e21e05a7",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -160,7 +160,7 @@ describe("/PUT user", () => {
                 username: "dooople hello",
                 address: "pass",
                 password: "haahha",
-                _id: "629bea51ba9b084278ee1b07",
+                _id: "629c0a8581282192e21e05a7",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -179,7 +179,7 @@ describe("/PUT user", () => {
                 username: "usoser",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bea51ba9b084278ee1b07",
+                _id: "629c0a8581282192e21e05a7",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -192,7 +192,7 @@ describe("/PUT user", () => {
 });
 describe("/DELETE/:id user", () => {
     it("it should delete a user given an id", (done) => {
-        id = "629bea51ba9b084278ee1b07";
+        id = "629c0a8581282192e21e05a7";
 
         chai
             .request(server)
