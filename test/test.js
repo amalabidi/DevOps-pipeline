@@ -9,8 +9,8 @@ const { User } = require("../models/User");
 describe("/POST user", () => {
     it("it should create a user ", (done) => {
         let user = new User({
-            email: "amalabidii@gmail.com",
-            username: "amalabidii",
+            email: "amalabidi@gmail.com",
+            username: "amalabidi",
             password: "hahahha",
 
             address: "jjj",
@@ -119,10 +119,10 @@ describe("/PUT user", () => {
             .type("json")
             .send({
                 email: "doe@email.com",
-                username: "amalabidii",
+                username: "amalabidi",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bdf08139fb365676042ca",
+                _id: "629bea51ba9b084278ee1b07",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -137,11 +137,11 @@ describe("/PUT user", () => {
             .put("/user/update")
             .type("json")
             .send({
-                email: "amalabidii@gmail.com",
+                email: "amalabidi@gmail.com",
                 username: "doe hello",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bdf08139fb365676042ca",
+                _id: "629bea51ba9b084278ee1b07",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -160,7 +160,7 @@ describe("/PUT user", () => {
                 username: "dooople hello",
                 address: "pass",
                 password: "haahha",
-                _id: "629bdf08139fb365676042ca",
+                _id: "629bea51ba9b084278ee1b07",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -179,7 +179,7 @@ describe("/PUT user", () => {
                 username: "usoser",
                 address: "pass",
                 password: "hahahha",
-                _id: "629bdf08139fb365676042ca",
+                _id: "629bea51ba9b084278ee1b07",
             })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -192,7 +192,7 @@ describe("/PUT user", () => {
 });
 describe("/DELETE/:id user", () => {
     it("it should delete a user given an id", (done) => {
-        id = "629bdf08139fb365676042ca";
+        id = "629bea51ba9b084278ee1b07";
 
         chai
             .request(server)
